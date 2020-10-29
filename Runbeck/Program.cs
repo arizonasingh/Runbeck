@@ -55,7 +55,7 @@ namespace Runbeck
             // the program will not accept a value larger than Int32 MaxValue of 2147483647
             while (!int.TryParse(fields, out numOfFields) || Convert.ToInt32(fields) <= 0)
             {
-                Console.Write("\nPlease try again and select a Numeric value greater than ero: ");
+                Console.Write("\nPlease try again and select a Numeric value greater than Zero: ");
                 fields = Console.ReadLine();
             }
 
