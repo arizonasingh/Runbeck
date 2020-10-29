@@ -30,7 +30,7 @@ namespace Runbeck
 
             // if the file does not exist or is not a CSV or TSV file, ask the user to enter a valid file path again
             // using RegEx instead of checking if filePath ends with .csv or .tsv will help prevent junk file names such as Names.csv.csv
-            while (!Regex.IsMatch(Path.GetFileName(filePath), @"^[\w]+.(CSV|csv|TSV|tsv)$") || !File.Exists(filePath))
+            while (!Regex.IsMatch(Path.GetFileName(filePath), @"^[\w]+.(TXT|txt|CSV|csv|TSV|tsv)$") || !File.Exists(filePath))
             {
                 Console.Write("\nThe file does not exist or the file path is incorrect! Please enter the full valid file path for the Test file: ");
 
@@ -88,6 +88,11 @@ namespace Runbeck
                     fileFormat = Console.ReadLine();
                     continue;
                 }
+            }
+
+            if (filePath.EndsWith(".txt"))
+            {
+                fileFormat = ".txt";
             }
 
             // ========== END OF USER INPUT QUESTIONS ==========================
